@@ -9,9 +9,6 @@ import PageSizeSelector from './page-size-selector';
 import { PAGER_PAGES_CLASS, PAGER_CLASS_FULL, LIGHT_MODE_CLASS } from './consts';
 import PagerProps from './pager-props';
 
-// import { getFormatter } from '../../localization/message';
-
-
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const viewFunction = ({
   className,
