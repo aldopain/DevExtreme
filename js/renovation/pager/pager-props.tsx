@@ -5,7 +5,7 @@ import messageLocalization from '../../localization/message';
 export default class PagerProps {
   @OneWay() showInfo?: boolean = false;
 
-  @OneWay() infoTextMessageTemplate?: string = messageLocalization.getFormatter('dxPager-infoText')();
+  @OneWay() infoText?: string = messageLocalization.getFormatter('dxPager-infoText')();
 
   @OneWay() lightModeEnabled?: boolean = false;
 
