@@ -7,7 +7,7 @@ import type { GetHtmlElement } from './resizable-container';
 
 export const PAGER_INFO_CLASS = 'dx-info';
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const viewFunction = ({ Text, htmlRef }: InfoText) => (
+export const viewFunction = ({ text, htmlRef }: InfoText) => (
   <div ref={htmlRef as any} className={PAGER_INFO_CLASS}>{Text}</div>
 );
 
@@ -34,7 +34,7 @@ export default class InfoText extends JSXComponent<InfoTextProps> implements Get
     return this.htmlRef;
   }
 
-  get Text(): string {
+  get text(): string {
     const {
       infoText, pageIndex, pageCount, totalCount,
     } = this.props as Required<InfoTextProps>;

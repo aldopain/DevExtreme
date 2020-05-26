@@ -12,7 +12,7 @@ describe('Info', () => {
     };
 
     it('should render valid markup', () => {
-      const tree = render({ Text: 'some text' });
+      const tree = render({ text: 'some text' });
 
       expect(tree.html())
         .toBe('<div class="dx-info">some text</div>');
@@ -24,7 +24,7 @@ describe('Info', () => {
       const infoText = new InfoText({
         infoText: 'Page {0} of {1} ({2} items) (custom)', pageCount: 20, pageIndex: 5, totalCount: 200,
       });
-      expect(infoText.Text).toBe('Page 6 of 20 (200 items) (custom)');
+      expect(infoText.text).toBe('Page 6 of 20 (200 items) (custom)');
     });
   });
 });
