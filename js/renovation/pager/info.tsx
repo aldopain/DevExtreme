@@ -13,7 +13,7 @@ export const viewFunction = ({ Text, htmlRef }: InfoText) => (
 
 @ComponentBindings()
 export class InfoTextProps {
-  @OneWay() infoTextMessageTemplate?: string;
+  @OneWay() infoText?: string;
 
   @OneWay() pageCount?: number = 10;
 
@@ -36,9 +36,9 @@ export default class InfoText extends JSXComponent<InfoTextProps> implements Get
 
   get Text(): string {
     const {
-      infoTextMessageTemplate, pageIndex, pageCount, totalCount,
+      infoText, pageIndex, pageCount, totalCount,
     } = this.props as Required<InfoTextProps>;
-    return format(infoTextMessageTemplate,
+    return format(infoText,
       formatNumber(pageIndex + 1, ''),
       formatNumber(pageCount, ''),
       formatNumber(totalCount, ''));

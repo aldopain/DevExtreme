@@ -17,7 +17,7 @@ export const viewFunction = ({
     parentRef, pageSizesRef, pagesRef, infoTextRef,
     infoTextVisible,
     pageSizeChange, pageIndexChange,
-    infoTextMessageTemplate, maxPagesCount, pageIndex,
+    infoText, maxPagesCount, pageIndex,
     pageCount, pageSize, pageSizes,
     pagesCountText, rtlEnabled,
     showNavigationButtons, totalCount,
@@ -37,7 +37,7 @@ export const viewFunction = ({
       {showInfo && infoTextVisible && (
         <InfoText
           ref={infoTextRef as any}
-          infoTextMessageTemplate={infoTextMessageTemplate}
+          infoText={infoText}
           pageCount={pageCount}
           pageIndex={pageIndex}
           totalCount={totalCount}
