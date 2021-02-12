@@ -644,15 +644,12 @@ export default {
                     return result;
                 },
 
-                _prepareEditCell: function(params) {
-                    const isNotCanceled = this.callBase.apply(this, arguments);
+                _afterPrepareEditCell: function(params) {
                     const validatingController = this.getController('validating');
 
-                    if(isNotCanceled && params.column.showEditorAlways) {
+                    if(params.column.showEditorAlways) {
                         validatingController.updateValidationState({ key: params.key });
                     }
-
-                    return isNotCanceled;
                 },
 
                 processItems: function(items, changeType) {
@@ -812,9 +809,7 @@ export default {
                     return result.promise ? result.promise() : result;
                 },
 
-                _beforeEditCell: function(rowIndex, columnIndex, item) {
-                    const result = this.callBase(rowIndex, columnIndex, item);
-
+                _validateBeforeEditCell: function(rowIndex, columnIndex, item, result) {
                     if(this.getEditMode() === EDIT_MODE_CELL) {
                         const $cell = this._rowsView._getCellElement(rowIndex, columnIndex);
                         const validator = $cell && $cell.data('dxValidator');

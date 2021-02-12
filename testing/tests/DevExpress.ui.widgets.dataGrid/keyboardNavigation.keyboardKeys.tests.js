@@ -2490,7 +2490,7 @@ QUnit.module('Keyboard keys', {
             }
         };
 
-        setupDataGridModules(this, ['data', 'columns', 'rows', 'editorFactory', 'gridView', 'columnHeaders', 'editing', 'keyboardNavigation'], { initViews: true });
+        setupDataGridModules(this, ['data', 'columns', 'rows', 'editorFactory', 'gridView', 'columnHeaders', 'editing', 'editingCellBased', 'keyboardNavigation'], { initViews: true });
 
         // act
         this.gridView.render($('#container'));
@@ -2539,7 +2539,7 @@ QUnit.module('Keyboard keys', {
             }
         };
 
-        setupDataGridModules(this, ['data', 'columns', 'rows', 'editorFactory', 'gridView', 'columnHeaders', 'editing', 'keyboardNavigation'], { initViews: true });
+        setupDataGridModules(this, ['data', 'columns', 'rows', 'editorFactory', 'gridView', 'columnHeaders', 'editing', 'editingCellBased', 'keyboardNavigation'], { initViews: true });
 
         // act
         this.gridView.render($('#container'));

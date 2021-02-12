@@ -1333,7 +1333,7 @@ QUnit.module('Focus', {
         ];
 
         that.setupDataGrid = function() {
-            setupDataGridModules(that, ['data', 'rows', 'columns', 'editorFactory', 'editing', 'validating', 'masterDetail'], {
+            setupDataGridModules(that, ['data', 'rows', 'columns', 'editorFactory', 'editing', 'editingCellBased', 'validating', 'masterDetail'], {
                 initViews: true,
                 controllers: {
                     columns: new MockColumnsController(that.columns),
@@ -1548,7 +1548,7 @@ QUnit.module('Focus', {
             return $('#qunit-fixture');
         };
 
-        setupDataGridModules(that, ['data', 'columns', 'rows', 'columnHeaders', 'filterRow', 'editorFactory', 'editing', 'keyboardNavigation'], {
+        setupDataGridModules(that, ['data', 'columns', 'rows', 'columnHeaders', 'filterRow', 'editorFactory', 'editing', 'editingCellBased', 'keyboardNavigation'], {
             initViews: true
         });
 
@@ -1610,7 +1610,7 @@ QUnit.module('Focus', {
             return $('#qunit-fixture');
         };
 
-        setupDataGridModules(that, ['data', 'columns', 'rows', 'editorFactory', 'editing', 'keyboardNavigation'], {
+        setupDataGridModules(that, ['data', 'columns', 'rows', 'editorFactory', 'editing', 'editingCellBased', 'keyboardNavigation'], {
             initViews: true
         });
 
@@ -1657,7 +1657,7 @@ QUnit.module('Focus', {
             return $('#qunit-fixture');
         };
 
-        setupDataGridModules(that, ['data', 'columns', 'rows', 'editorFactory', 'editing', 'keyboardNavigation'], {
+        setupDataGridModules(that, ['data', 'columns', 'rows', 'editorFactory', 'editing', 'editingCellBased', 'keyboardNavigation'], {
             initViews: true
         });
 

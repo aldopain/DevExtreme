@@ -49,7 +49,7 @@ const setupModule = function() {
     };
 
     that.setupTreeList = function() {
-        setupTreeListModules(that, ['data', 'columns', 'rows', 'selection', 'headerPanel', 'masterDetail', 'editing', 'editingFormBased', 'editorFactory', 'validating', 'errorHandling', 'search'], {
+        setupTreeListModules(that, ['data', 'columns', 'rows', 'selection', 'headerPanel', 'masterDetail', 'editing', 'editingFormBased', 'editingCellBased', 'editorFactory', 'validating', 'errorHandling', 'search'], {
             initViews: true
         });
     };

@@ -59,7 +59,7 @@ QUnit.module('Real DataController and ColumnsController', {
 
         setupDataGridModules(this, [
             'data', 'columns', 'columnHeaders', 'rows',
-            'editorFactory', 'gridView', 'editing', 'focus',
+            'editorFactory', 'gridView', 'editing', 'editingCellBased', 'focus',
             'keyboardNavigation', 'validating', 'masterDetail', 'selection',
             'grouping'
         ], {
@@ -615,7 +615,7 @@ QUnit.module('Real DataController and ColumnsController', {
         this.clock.tick();
 
         // assert
-        assert.equal(editingStartCount, 1, 'onStartEdiitng fires count');
+        assert.equal(editingStartCount, 1, 'onStartEditing fires count');
         assert.equal(focusedCellChangingFiresCount, 1, 'onFocusedCellChanging fires count');
         assert.equal(focusedCellChangedFiresCount, 1, 'onFocusedCellChanged fires count');
 
@@ -630,7 +630,7 @@ QUnit.module('Real DataController and ColumnsController', {
         this.clock.tick();
         // assert
         assert.notOk(keyboardNavigationController._canceledCellPosition, 'Check _canceledCellPosition');
-        assert.equal(editingStartCount, 1, 'onStartEdiitng fires count');
+        assert.equal(editingStartCount, 1, 'onStartEditing fires count');
         assert.equal(focusedCellChangingFiresCount, 2, 'onFocusedCellChanging fires count');
         assert.equal(focusedCellChangedFiresCount, 1, 'onFocusedCellChanged fires count');
 

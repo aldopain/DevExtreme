@@ -208,8 +208,6 @@ export default {
                         this._showEditPopup(rowIndex, true);
                         this._editPopup.option('animation', defaultAnimation);
                     }
-
-                    this.callBase.apply(this, arguments);
                 },
 
                 _hideEditPopup: function() {

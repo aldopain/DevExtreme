@@ -883,15 +883,13 @@ export default {
                     return this.callBase(cellOptions, column);
                 },
 
-                _closeEditItem: function($targetElement) {
+                _checkEditItem: function($targetElement) {
                     const $itemContents = $targetElement.closest('.' + FORM_ITEM_CONTENT_CLASS);
                     const rowIndex = this._dataController.getRowIndexByKey(this._dataController.adaptiveExpandedKey()) + 1;
                     const formItem = $itemContents.length ? $itemContents.first().data('dx-form-item') : null;
                     const columnIndex = formItem && formItem.column && this._columnsController.getVisibleIndex(formItem.column.index);
 
-                    if(!this.isEditCell(rowIndex, columnIndex)) {
-                        this.callBase($targetElement);
-                    }
+                    return !this.isEditCell(rowIndex, columnIndex);
                 },
 
                 _beforeUpdateItems: function(rowIndices, rowIndex) {

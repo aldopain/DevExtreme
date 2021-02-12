@@ -2046,20 +2046,22 @@ export default {
         },
         controllers: {
             editing: {
-                editCell: function(rowIndex, columnIndex) {
+                _editCell: function({ isCellEditing }) {
                     const keyboardController = this.getController('keyboardNavigation');
 
-                    if(keyboardController._processCanceledEditCellPosition(rowIndex, columnIndex)) {
-                        return false;
-                    }
-
-                    const isCellEditing = this.callBase(rowIndex, columnIndex);
                     if(isCellEditing) {
                         keyboardController.setupFocusedView();
                     }
 
                     return isCellEditing;
                 },
+
+                _checkFocus: function(rowIndex, columnIndex) {
+                    const keyboardController = this.getController('keyboardNavigation');
+
+                    return !keyboardController._processCanceledEditCellPosition(rowIndex, columnIndex);
+                },
+
                 editRow: function(rowIndex) {
                     const keyboardController = this.getController('keyboardNavigation');
                     const visibleColumnIndex = keyboardController.getVisibleColumnIndex();
@@ -2070,10 +2072,8 @@ export default {
                     }
                     this.callBase(rowIndex);
                 },
-                addRow: function(parentKey) {
+                _beforeAddRow: function(parentKey) {
                     this.getController('keyboardNavigation').setupFocusedView();
-
-                    return this.callBase.apply(this, arguments);
                 },
                 getFocusedCellInRow: function(rowIndex) {
                     const keyboardNavigationController = this.getController('keyboardNavigation');
@@ -2101,12 +2101,10 @@ export default {
                 closeEditCell: function() {
                     const keyboardNavigation = this.getController('keyboardNavigation');
                     keyboardNavigation._fastEditingStarted = false;
-
-                    const result = this.callBase.apply(this, arguments);
-
+                },
+                _afterCloseEditCell: function() {
+                    const keyboardNavigation = this.getController('keyboardNavigation');
                     keyboardNavigation._updateFocus();
-
-                    return result;
                 },
                 _delayedInputFocus: function() {
                     this._keyboardNavigationController._isNeedScroll = true;
